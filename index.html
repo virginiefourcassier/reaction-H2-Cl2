@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Transformation chimique – Modélisation moléculaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background:#f4f6f8; }
+    .container { max-width:980px; margin:auto; padding:10px; }
+    canvas { background:#fff; border-radius:10px; display:block; margin:auto; }
+    .controls { display:flex; gap:14px; justify-content:center; margin:10px 0; flex-wrap:wrap; align-items:center; }
+    .control { background:#eef1f4; padding:8px 12px; border-radius:8px; font-size:14px; }
+    .control input[type="range"]{ vertical-align:middle; }
+    .footer { text-align:center; font-size:13px; color:#444; margin-top:6px; }
+    button { cursor:pointer; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <canvas id="simu" width="900" height="520"></canvas>
+
+  <div class="controls">
+    <div class="control">
+      Température (°C)
+      <input type="range" id="temp" min="10" max="120" value="50">
+      <span id="tempVal">50</span>
+    </div>
+
+    <div class="control">
+      Quantité initiale (dihydrogène)
+      <input type="range" id="h2" min="1" max="15" value="6">
+      <span id="h2Val">6</span>
+    </div>
+
+    <div class="control">
+      Quantité initiale (dichlore)
+      <input type="range" id="cl2" min="5" max="20" value="10">
+      <span id="cl2Val">10</span>
+    </div>
+
+    <div class="control">
+      <button id="toggleAtoms">Atomes : OFF</button>
+    </div>
+
+    <div class="control">
+      <button id="restart">Relancer</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Modélisation moléculaire — HTML + JS autonome (GitHub Pages / iframe ÉLÉA)
+  </div>
+</div>
+
+<!-- IMPORTANT cache-busting : incrémente v= à chaque modification -->
+<script src="app.js?v=4"></script>
+</body>
+</html>
